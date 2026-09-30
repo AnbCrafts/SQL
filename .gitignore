@@ -1,0 +1,7 @@
+## Ignore temporary database files, logs, and backups
+*.ldf
+*.mdf
+*.bak
+*.tmp
+*.log
+.vs/
