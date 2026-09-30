@@ -1,0 +1,28 @@
+﻿material_id material_name                                                                                        type                 unit_of_measure reorder_level                           hazardous_flag
+----------- ---------------------------------------------------------------------------------------------------- -------------------- --------------- --------------------------------------- --------------
+1           Titanium Dioxide                                                                                     Pigment              KG              100.00                                  0
+2           Red Iron Oxide                                                                                       Pigment              KG              50.00                                   0
+3           Pure Acrylic Binder                                                                                  Binder               L               200.00                                  0
+4           Mineral Spirit                                                                                       Solvent              L               150.00                                  1
+5           Defoamer X1                                                                                          Additive             L               25.00                                   1
+6           Blue Colorant                                                                                        Pigment              KG              40.00                                   0
+7           Red Colorant                                                                                         Pigment              KG              600.00                                  0
+8           Titanium Dioxide                                                                                     Pigment              KG              300.00                                  0
+9           Red Oxide                                                                                            Pigment              KG              150.00                                  0
+10          Acrylic Binder                                                                                       Binder               LTR             500.00                                  0
+11          Mineral Spirit                                                                                       Solvent              LTR             200.00                                  1
+12          Defoamer X1                                                                                          Additive             LTR             75.00                                   0
+
+(12 rows affected)
+
+material_id material_name                                                                                        type                 unit_of_measure reorder_level                           hazardous_flag
+----------- ---------------------------------------------------------------------------------------------------- -------------------- --------------- --------------------------------------- --------------
+1           Titanium Dioxide                                                                                     Pigment              KG              400.00                                  1
+2           Acrylic Binder                                                                                       Binder               LTR             650.00                                  0
+3           Blue Pigment                                                                                         Pigment              KG              250.00                                  0
+4           Flow Modifier                                                                                        Additive             LTR             120.00                                  0
+
+(4 rows affected)
+
+
+Completion time: 2026-09-21T14:12:30.2196387+05:30
