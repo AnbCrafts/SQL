@@ -3,7 +3,7 @@ CREATE PROC spdivide2(
 @a decimal,
 @b decimal,
 @c decimal output
-) AS
+) AS 
 BEGIN
 BEGIN TRY
 SET @c = @a / @b;
