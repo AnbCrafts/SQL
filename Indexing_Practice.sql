@@ -6,7 +6,13 @@
 create clustered index IX_OrdeItems_OrderId on sales.order_items(order_id, item_id);
 SELECT *
   FROM [BikeStores].[sales].[order_items] 
-  where order_id =42;
+  where item_id = 42 and order_id =42; --- index seek
+
+
+  SELECT *
+  FROM [BikeStores].[sales].[order_items] 
+  where   order_id =42 and item_id = 42; --- index seek
+
   drop index IX_OrdeItems_OrderId on sales.[order_items]
 
 --Q2
