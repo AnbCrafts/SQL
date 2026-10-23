@@ -122,3 +122,67 @@ BEGIN
     SELECT @@ROWCOUNT AS RowsAffected;
 END
 
+
+
+
+-- DYNAMIC PAGING
+
+create proc udp_GetDynamicallyPaginatedUsersList
+
+@pgIndex int,
+@pageSize int,
+@totalRows int out
+
+as
+begin
+declare @start int
+declare @end int
+
+set @start = (@pgIndex*@pageSize) + 1
+set @end = (@pgIndex + 1) * @pageSize
+
+select * from 
+(select ROW_NUMBER() over(order by userId) as RowNumber ,* from labTest.QueryUser ) as users
+where @start<=RowNumber and RowNumber<=@end
+
+select @totalRows = COUNT(*) from labTest.QueryUser
+
+end;
+
+
+declare @totalRows int
+exec udp_GetDynamicallyPaginatedUsersList 4,20,@totalRows out
+
+print @totalRows
+
+
+
+-- small details
+
+create proc udp_GetDynamicallyPaginatedUsersShortDescriptionList
+
+@pgIndex int,
+@pageSize int,
+@totalRows int out
+
+as
+begin
+declare @start int
+declare @end int
+
+set @start = (@pgIndex*@pageSize) + 1
+set @end = (@pgIndex + 1) * @pageSize
+
+select UserId,UserName,Email from 
+(select ROW_NUMBER() over(order by userId) as RowNumber ,* from labTest.QueryUser ) as users
+where @start<=RowNumber and RowNumber<=@end
+
+select @totalRows = COUNT(*) from labTest.QueryUser
+
+end;
+
+
+declare @totalRows int
+exec udp_GetDynamicallyPaginatedUsersShortDescriptionList 4,20,@totalRows out
+
+print @totalRows

@@ -95,3 +95,4 @@ ALTER TABLE labTest.QueryUser
 ADD QueryAmount DECIMAL(18,2) default 7800;
 
 select * from labTest.QueryUser
+
