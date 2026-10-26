@@ -186,3 +186,5 @@ declare @totalRows int
 exec udp_GetDynamicallyPaginatedUsersShortDescriptionList 4,20,@totalRows out
 
 print @totalRows
+
+select * from labTest.QueryUser
