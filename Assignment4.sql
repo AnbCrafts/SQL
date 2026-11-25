@@ -162,9 +162,9 @@ DECLARE @Bookings AS labTest.TicketBookingType;
 
 INSERT INTO @Bookings
 VALUES
-('Rajiv Kumar', 'Kolkata', 'Delhi', '2026-12-01', 4500),
-('Asish Roy', 'Delhi', 'Mumbai', '2026-12-05', 3200),
-('Bipin Gupta', 'Chennai', 'Bangalore', '2026-12-10', 1800);
+('Rajiv Kumar', 'Kolkata', 'Delhi', '2026-12-02', 4500),
+('Asish Roy', 'Delhi', 'Mumbai', '2026-12-07', 3200),
+('Bipin Gupta', 'Chennai', 'Bangalore', '2026-12-11', 1800);
 
 EXEC labTest.InsertTicketBookings @TicketBookings = @Bookings;
 
@@ -291,11 +291,11 @@ INSERT INTO labTest.Complaint
     EscalationDate
 )
 VALUES
-('Rajiv Kumar', 'Internet not working', DATEADD(DAY, -10, GETDATE()), 'Open', NULL),
+('Rajiv Kumar', 'Internet not working', DATEADD(DAY, -25, GETDATE()), 'Open', NULL),
 
-('Asish Roy', 'Billing issue', DATEADD(DAY, -8, GETDATE()), 'Open', NULL),
+('Asish Roy', 'Billing issue', DATEADD(DAY, -18, GETDATE()), 'Open', NULL),
 
-('Bipin Gupta', 'Slow network speed', DATEADD(DAY, -15, GETDATE()), 'Open', NULL),
+('Bipin Gupta', 'Slow network speed', DATEADD(DAY, -35, GETDATE()), 'Open', NULL),
 
 ('Sourav Patra', 'Router replacement request', DATEADD(DAY, -5, GETDATE()), 'Open', NULL),
 

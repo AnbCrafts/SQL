@@ -178,7 +178,7 @@ EXEC RegisterStudentInCourse
 -- successful enrollment
 
 EXEC RegisterStudentInCourse
-    @studentId = 1,
+    @studentId = 5,
     @courseID = 8,
     @joinDate = '2026-11-19';
 
@@ -531,7 +531,7 @@ SELECT @ConcatinatedCourseList;
 
 --8 Suppose there is table named sales that stores information about sales transactions, including the sales ID, Sales Date, Customer ID, Product ID, and the Total Amount. Create indexes on the columns frequently used in the WHERE clause or JOIN conditions like sales date, customer id, product id using covering index.
 
-CREATE TABLE labTest.Sales (
+CREATE TABLE labTest.Sale (
     SalesID INT IDENTITY(1,1) PRIMARY KEY,
     SalesDate DATE NOT NULL,
     CustomerID INT NOT NULL,
@@ -583,6 +583,10 @@ ON labTest.Sales (CustomerID);
 CREATE NONCLUSTERED INDEX IX_Sales_CustomerID_SalesDate_ProductID
 ON labTest.Sales (CustomerID, SalesDate, ProductID);
 
+select CustomerID from labTest.Sales where SalesDate = '2026-01-05';
+select CustomerID from labTest.Sales where ProductID = 1;
+select * from labTest.Sales
+
 
 --9
 
@@ -597,10 +601,10 @@ BEGIN TRY
     BEGIN TRANSACTION;
 
     INSERT INTO labTest.AccountTransaction(AccountID, Amount, TransactionDate)
-    VALUES (101, 1000, GETDATE());
+    VALUES (101, NULL, GETDATE());
 
     INSERT INTO labTest.AccountTransaction(AccountID, Amount, TransactionDate)
-    VALUES (102, 500, GETDATE());
+    VALUES (102, NULL, GETDATE());
 
     INSERT INTO labTest.AccountTransaction(AccountID, Amount, TransactionDate)
     VALUES (103, 750, GETDATE());
@@ -616,3 +620,7 @@ BEGIN CATCH
     PRINT ERROR_MESSAGE();
 
 END CATCH;
+
+
+
+select * from labTest.AccountTransaction
